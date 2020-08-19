@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 from flask_mysqldb import MySQL
 
 app = Flask(__name__)
@@ -10,7 +10,7 @@ mysql = MySQL(app)
 
 @app.route('/')
 def Index():
-    return "Hello  world"
+    return render_template('layout.html');
 
 @app.route('/add_contact')
 def add_contact():
